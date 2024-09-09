@@ -1,0 +1,78 @@
+<!--
+Nama    : Wilson Angelie Tan
+NPM     : 140810230024
+Kelas   : B
+Tanggal : 05/09/2024
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using JS</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="calc">
+            <form>
+                <div>
+                    <p>Bilangan 1 :</p>
+                </div>
+                <div class="dis">
+                    <input type="numbner" id="display1" required>
+                </div>
+
+                <div>
+                    <p>Bilangan 2 :</p>
+                </div>
+                <div class="dis">
+                    <input type="numbner" id="display2" required>
+                </div>
+
+                <div>
+                    <p>Hasil :</p>
+                </div>
+                <div class="dis">
+                    <input type="text" id="hasil" readonly>
+                </div>
+
+                <div>
+                    <input type="button" value="+" onclick="operate('+')" class="operator">
+                    <input type="button" value="-" onclick="operate('-')" class="operator">
+                    <input type="button" value="*" onclick="operate('*')" >
+                    <input type="button" value="/" onclick="operate('/')" class="operator">
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+    <script>
+        function operate(op){
+            let num1 = parseFloat(document.getElementById('display1').value);
+            let num2 = parseFloat(document.getElementById('display2').value);
+
+            let result;
+
+            switch(op){
+                case '+' :
+                    result = num1+num2;
+                    break;
+                case '-' :
+                    result = num1-num2;
+                    break;
+                case '*' :
+                    result = num1*num2;
+                    break;
+                case '/' :
+                    result = (num2 === 0)?'Error' : num1/num2;                    
+                    break;
+            }
+            document.getElementById('hasil').value = result;
+        }
+    </script>
+</body>
+</html>
